@@ -1,0 +1,57 @@
+test
+// 剑指offer刷题记录：
+1，二维数组，行列均递增形式，判断target是否存在
+// c++版本
+// 方法一：
+       bool Find(int target, vector<vector<int> > array) {
+        for(int i = 0;i <  array.size();++i){
+            for(int j = 0; j <array[i].size();++j){
+                if(array[i][j] == target){
+                   return true;
+                }
+            }
+        }
+        return false;
+    }
+
+// 方法二：
+	bool Find(int target, vector<vector<int> > array) {
+        int row = array.size()-1;
+        int cloumn = 0;
+        while(row >=0 &&cloumn <array[0].size()){
+            if(target ==array[row][cloumn]){
+                return true;
+            }else if(target <array[row][cloumn]){
+                row--;
+            }else{
+                cloumn++;
+            }
+        }
+         return false;
+    }
+
+
+
+2，替换空格
+	void replaceSpace(char *str,int length) {
+        int count = 0;
+        // 计算空格的个数
+        for(int i = 0; i < length && str[i] != '\0'; ++i){
+            if(str[i] == ' '){
+                count++;
+            }
+        }
+        if(count == 0) return;
+        // 替换字符串
+        int index = length + count * 2;
+        for(int i = length;i >= 0 ;--i){
+            if(str[i] == ' '){
+                str[index--] = '0';
+                str[index--] = '2';
+                str[index--] = '%';
+            }else{
+                str[index] = str[i];
+                index--;
+            }
+        }
+    }
