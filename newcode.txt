@@ -54,3 +54,36 @@
             }
         }
     }
+
+3,从尾到头打印链表
+    // 方法一
+    vector<int> printListFromTailToHead(ListNode* head) {
+       vector<int> result;
+        stack<int> tmp;
+        ListNode* cur=head;
+        while(cur)
+            {
+            tmp.push(cur->val);
+            cur=cur->next;
+        }
+        while(!tmp.empty())
+            {
+            result.push_back(tmp.top());
+            tmp.pop();
+        }
+         return result;
+    }
+    // 方法二
+    vector<int> printListFromTailToHead(ListNode* head) {
+        vector<int> result;
+        stack<int> temp;
+        while(head){
+            temp.push(head->val);
+            head = head->next;
+        }
+        while(!temp.empty()){
+            result.push_back(temp.top());
+            temp.pop();
+        }
+        return result;
+    }
