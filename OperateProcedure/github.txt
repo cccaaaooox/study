@@ -1,0 +1,17 @@
+github操作手顺：
+	1，fork别人的仓库到自己的github账户
+	2，git clone -- 把自己github账户下的仓库拉到本地 -- 配置git账户,配置ssh账户
+	3，修改文件
+	4，git add -- git commit -- git push 提交修改到远端（自己账户下的仓库） -- 不建议使用master分支进行修改，创建另一个分支修改并合并到master分支
+	5，create pull request 发送合并请求。
+
+
+github配置ssh手顺：
+	1,生成ssh-key ：ssh-keygen -t rsa
+	2,添加id_rsa.pub 添加到github上
+	3,测试配置是否成功：ssh -T git@github.com
+
+本地仓库配置git：
+	// 配置个人账户
+	git config --global user.name ""
+	git config --global user.email ""
